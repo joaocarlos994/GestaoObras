@@ -1,0 +1,256 @@
+/* ============================================================
+   BASE GERAL
+   ============================================================ */
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* Container principal */
+.main-container {
+    max-width: 1200px;
+    margin: 30px auto 40px auto;
+    padding: 0 15px;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5 {
+    color: #111827;
+    font-weight: 600;
+}
+
+/* Remove listas estranhas se existirem */
+body > ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* ============================================================
+   NAVBAR / MENU SUPERIOR
+   ============================================================ */
+
+.main-navbar {
+    background: #020617 !important; /* preto profundo */
+}
+
+.navbar-brand,
+.nav-link,
+.navbar-nav .nav-link {
+    color: #e5e7eb !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* Link ativo */
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+    border-bottom: 2px solid #3b82f6;
+}
+
+
+
+/* ============================================================
+   CARDS DE PAINÉIS & DASHBOARD
+   ============================================================ */
+
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background: #111827;
+    color: #f9fafb;
+    font-weight: 600;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.card-body {
+    background: #ffffff;
+}
+
+/* Hero da homepage */
+.home-hero {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.12);
+}
+
+.home-hero h1 {
+    font-weight: 700;
+}
+
+/* Cards da homepage */
+.home-grid .home-card {
+    border-radius: 16px;
+    border: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.home-grid .home-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.16);
+    background: #f9fafb;
+}
+
+.home-card-link {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+
+
+/* ============================================================
+   TABELAS
+   ============================================================ */
+
+.table {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background: #111827;
+    color: #f9fafb;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f3f4f6;
+}
+
+
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+
+.btn-primary {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-secondary {
+    border-radius: 8px;
+}
+
+
+
+/* ============================================================
+   TABS (Detalhes da Obra)
+   ============================================================ */
+
+.nav-tabs {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-tabs .nav-link {
+    color: #4b5563;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    margin-right: 4px;
+    border: 1px solid transparent;
+}
+
+.nav-tabs .nav-link:hover {
+    background: #e5e7eb;
+}
+
+.nav-tabs .nav-link.active {
+    color: #111827;
+    background: #ffffff;
+    border-color: #e5e7eb #e5e7eb #ffffff;
+}
+
+.tab-content {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-top: none;
+    border-radius: 0 10px 10px 10px;
+    padding: 16px;
+}
+
+
+
+/* ============================================================
+   FORMULÁRIOS
+   ============================================================ */
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border-color: #d1d5db;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 0.15rem rgba(59, 130, 246, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.section-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer,
+.footer {
+    background: #020617;
+    color: #9ca3af;
+    padding: 12px 0;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #e5e7eb;
+}
+
+
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .main-container {
+        margin-top: 15px;
+    }
+
+    .nav-tabs .nav-link {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .home-hero {
+        text-align: center;
+    }
+}

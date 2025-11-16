@@ -1,0 +1,27 @@
+@model List<GestaoObras.Web.Models.Obra>
+
+<h1>Lista de Obras</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cliente</th>
+            <th>Morada</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obra in Model)
+        {
+            <tr>
+                <td>@obra.Nome</td>
+                <td>@obra.Cliente.Nome</td>
+                <td>@obra.Morada</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@obra.Id" class="btn btn-info btn-sm">Detalhes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
