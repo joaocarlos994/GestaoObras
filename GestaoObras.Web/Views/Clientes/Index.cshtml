@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+        <h2 class="mb-0">Clientes</h2>
+        <small class="text-muted">Gestão de clientes registados na aplicação.</small>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-lg me-1"></i> Novo Cliente
+    </a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Aqui vais listar os clientes (mais tarde, quando ligares ao Entity Framework).
+        </p>
+
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Nome</th>
+                    <th>NIF</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemplo estático, depois substituímos por um foreach -->
+                <tr>
+                    <td>Exemplo Cliente</td>
+                    <td>123456789</td>
+                    <td>cliente@exemplo.pt</td>
+                    <td>912 345 678</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
+                        <a href="#" class="btn btn-sm btn-outline-danger">Apagar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

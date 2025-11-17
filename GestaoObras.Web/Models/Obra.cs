@@ -3,11 +3,12 @@ namespace GestaoObras.Web.Models
     public class Obra
     {
         public int Id { get; set; }
+
         public string Nome { get; set; } = string.Empty;
         public string Descricao { get; set; } = string.Empty;
 
         public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; } = new Cliente();
+        public Cliente Cliente { get; set; }   // <--- removido o new Cliente()
 
         public string Morada { get; set; } = string.Empty;
         public double? Latitude { get; set; }

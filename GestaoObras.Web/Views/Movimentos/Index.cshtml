@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Movimentos de Stock";
+}
+
+<h2 class="mb-3">Movimentos de Stock</h2>
+<p class="text-muted">
+    Listagem apenas de leitura com os movimentos de materiais por obra.
+</p>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Obra</th>
+                    <th>Cliente</th>
+                    <th>Material</th>
+                    <th>Operação</th>
+                    <th>Quantidade</th>
+                    <th>Data da Operação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Obra Exemplo</td>
+                    <td>Cliente Exemplo</td>
+                    <td>Tijolo Exemplo</td>
+                    <td><span class="badge bg-danger">REMOVE</span></td>
+                    <td>10</td>
+                    <td>2025-01-10 14:35</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

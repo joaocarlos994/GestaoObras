@@ -2,30 +2,111 @@
     ViewData["Title"] = "Dashboard";
 }
 
+<div class="row mb-4">
+    <div class="col-lg-8">
+        <div class="p-4 rounded-3 bg-white shadow-sm">
+            <h1 class="h3 mb-2">Olá, bem-vindo à Gestão de Obras</h1>
+            <p class="text-muted mb-3">
+                Aqui pode gerir clientes, obras, materiais e acompanhar os movimentos de stock e pagamentos
+                de forma simples e organizada.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+                <a asp-controller="Obras" asp-action="Index" class="btn btn-primary">
+                    <i class="bi bi-bank me-1"></i> Ver Obras
+                </a>
+                <a asp-controller="Clientes" asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-people me-1"></i> Ver Clientes
+                </a>
+                <a asp-controller="Materiais" asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-box-seam me-1"></i> Ver Materiais
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mt-3 mt-lg-0">
+        <div class="p-4 rounded-3 bg-dark text-white shadow-sm h-100 d-flex flex-column justify-content-center">
+            <h2 class="h5 mb-2"><i class="bi bi-clipboard-data me-2"></i>Resumo rápido</h2>
+            <p class="mb-1 small text-light">Nº de obras ativas, clientes, materiais, etc.</p>
+            <p class="mb-0 small text-secondary">Mais tarde podes substituir por dados reais do EF.</p>
+        </div>
+    </div>
+</div>
+
 <div class="row g-3">
-    <div class="col-md-3">
-        <div class="card bg-primary text-white">
+    <div class="col-md-6 col-xl-3">
+        <div class="card shadow-sm border-0 h-100 dashboard-card">
             <div class="card-body">
-                <h5 class="card-title">Clientes</h5>
-                <p class="card-text">Gerir clientes registados.</p>
-                <a asp-controller="Clientes" asp-action="Index" class="text-white text-decoration-underline">
-                    Ver clientes →
+                <div class="d-flex align-items-center mb-2">
+                    <div class="icon-circle bg-primary-subtle text-primary me-3">
+                        <i class="bi bi-people fs-5"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Clientes</h5>
+                </div>
+                <p class="card-text text-muted">
+                    Gerir clientes registados: dados de contacto, NIF e histórico de obras.
+                </p>
+                <a asp-controller="Clientes" asp-action="Index" class="stretched-link small fw-semibold">
+                    Ir para Clientes →
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="col-md-3">
-        <div class="card bg-success text-white">
+    <div class="col-md-6 col-xl-3">
+        <div class="card shadow-sm border-0 h-100 dashboard-card">
             <div class="card-body">
-                <h5 class="card-title">Materiais</h5>
-                <p class="card-text">Stock e catálogo de materiais.</p>
-                <a asp-controller="Materiais" asp-action="Index" class="text-white text-decoration-underline">
-                    Ver materiais →
+                <div class="d-flex align-items-center mb-2">
+                    <div class="icon-circle bg-success-subtle text-success me-3">
+                        <i class="bi bi-bank fs-5"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Obras</h5>
+                </div>
+                <p class="card-text text-muted">
+                    Criar e acompanhar obras, incluindo localização, estado e cliente associado.
+                </p>
+                <a asp-controller="Obras" asp-action="Index" class="stretched-link small fw-semibold">
+                    Ir para Obras →
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- repete para Obras e Movimentos -->
+    <div class="col-md-6 col-xl-3">
+        <div class="card shadow-sm border-0 h-100 dashboard-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="icon-circle bg-warning-subtle text-warning me-3">
+                        <i class="bi bi-box-seam fs-5"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Materiais</h5>
+                </div>
+                <p class="card-text text-muted">
+                    Catalogar materiais, gerir stock e associar consumos às obras.
+                </p>
+                <a asp-controller="Materiais" asp-action="Index" class="stretched-link small fw-semibold">
+                    Ir para Materiais →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card shadow-sm border-0 h-100 dashboard-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="icon-circle bg-info-subtle text-info me-3">
+                        <i class="bi bi-arrow-left-right fs-5"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Movimentos</h5>
+                </div>
+                <p class="card-text text-muted">
+                    Consultar movimentos de stock por obra, material, quantidade e data.
+                </p>
+                <a asp-controller="Movimentos" asp-action="Index" class="stretched-link small fw-semibold">
+                    Ver Movimentos →
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

@@ -19,7 +19,7 @@ namespace GestaoObras.Web.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=GestaoObrasDb;Username=postgres;Password=123456;");
+            optionsBuilder.UseNpgsql("Host=localhost;Database=GestaoObrasDb;Username=postgres;Password=1234;");
         }
     }
 }

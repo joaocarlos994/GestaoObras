@@ -1,6 +1,7 @@
-// MovimentosController.cs
-// Controller logic for managing Movimentosusing GestaoObras.Web.Data;
+using System.Linq;
+using System.Threading.Tasks;
 using GestaoObras.Web.Data;
+using GestaoObras.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,12 +16,15 @@ namespace GestaoObras.Web.Controllers
             _context = context;
         }
 
+        // GET: Movimentos
         public async Task<IActionResult> Index()
         {
             var movimentos = await _context.MovimentosStock
-                .Include(m => m.Obra).ThenInclude(o => o.Cliente)
+                .Include(m => m.Obra)
+                    .ThenInclude(o => o.Cliente)
                 .Include(m => m.Material)
-                .OrderByDescending(m => m.DataHora)
+              .OrderByDescending(m => m.Id)
+
                 .ToListAsync();
 
             return View(movimentos);

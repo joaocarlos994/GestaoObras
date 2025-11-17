@@ -1,0 +1,57 @@
+«@model GestaoObras.Web.Models.Obra
+
+@{
+    ViewData["Title"] = "Detalhes da Obra";
+}
+
+<h2 class="mb-3">Detalhes da Obra</h2>
+
+<div class="card shadow-sm mb-3">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Nome</dt>
+            <dd class="col-sm-9">@Model.Nome</dd>
+
+            <dt class="col-sm-3">Cliente</dt>
+            <dd class="col-sm-9">@Model.Cliente?.Nome</dd>
+
+            <dt class="col-sm-3">Descrição</dt>
+            <dd class="col-sm-9">@Model.Descricao</dd>
+
+            <dt class="col-sm-3">Morada</dt>
+            <dd class="col-sm-9">@Model.Morada</dd>
+
+            <dt class="col-sm-3">Localização</dt>
+            <dd class="col-sm-9">
+                @if (Model.Latitude.HasValue && Model.Longitude.HasValue)
+                {
+                    @($"{Model.Latitude:0.000000}, {Model.Longitude:0.000000}")
+                }
+                else
+                {
+                    <span class="text-muted">Sem coordenadas</span>
+                }
+            </dd>
+
+            <dt class="col-sm-3">Estado</dt>
+            <dd class="col-sm-9">
+                @if (Model.Ativa)
+                {
+                    <span class="badge bg-success">Ativa</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Inativa</span>
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between">
+    <a asp-action="Index" class="btn btn-outline-secondary">Voltar à lista</a>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-1">Editar</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">Apagar</a>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Materiais";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+        <h2 class="mb-0">Materiais</h2>
+        <small class="text-muted">Catálogo de materiais e respetivo stock.</small>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-lg me-1"></i> Novo Material
+    </a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <p class="text-muted mb-3">
+            Depois vamos ligar esta tabela ao stock registado na base de dados.
+        </p>
+
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Nome do Material</th>
+                    <th>Descrição</th>
+                    <th>Stock Disponível</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tijolo Exemplo</td>
+                    <td>Tijolo furado 30x20</td>
+                    <td>100</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
+                        <a href="#" class="btn btn-sm btn-outline-danger">Apagar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
