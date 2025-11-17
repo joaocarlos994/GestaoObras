@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/CRUD.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ1JVRC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,8 +64,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Detalhes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcRGV0YWxoZXMuY3NodG1s
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Edit.cshtml]
@@ -78,6 +82,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/_ViewStart.cshtml]

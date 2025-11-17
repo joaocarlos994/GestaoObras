@@ -35,7 +35,7 @@ namespace GestaoObras.Web.Controllers
 
             var obra = await _context.Obras
                 .Include(o => o.Cliente)
-                .Include(o => o.RegistosMaterial)
+                .Include(o => o.MovimentosStock)
                 .Include(o => o.RegistosMaoObra)
                 .Include(o => o.Pagamentos)
                 .FirstOrDefaultAsync(o => o.Id == id);

@@ -1,12 +1,15 @@
 // Cliente.cs
 // Model for Cliente
 
-public class Cliente
+namespace GestaoObras.Web.Models
 {
-    public int Id { get; set; }
-    public string Nome { get; set; }
-    public string NIF { get; set; }
-    public string Morada { get; set; }
-    public string Email { get; set; }
-    public string Telefone { get; set; }
+    public class Cliente
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public string NIF { get; set; } = string.Empty;
+        public string Morada { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Telefone { get; set; } = string.Empty;
+    }
 }

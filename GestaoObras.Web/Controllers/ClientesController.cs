@@ -1,5 +1,4 @@
-// ClientesController.cs
-// Controller logic for managing Clientesusing System.Linq;
+using System.Linq;
 using System.Threading.Tasks;
 using GestaoObras.Web.Data;
 using GestaoObras.Web.Models;
