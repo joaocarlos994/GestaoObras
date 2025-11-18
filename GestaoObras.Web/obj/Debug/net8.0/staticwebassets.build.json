@@ -1,1 +1,39 @@
-{"Version":1,"Hash":"T8Hj7w2BgcbGsGUMGAY55WD8rQ5m3rqA3fHzQ8tDB2Q=","Source":"GestaoObras.Web","BasePath":"_content/GestaoObras.Web","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[{"Name":"GestaoObras.Web\\wwwroot","Source":"GestaoObras.Web","ContentRoot":"C:\\Users\\Utilizador\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\","BasePath":"_content/GestaoObras.Web","Pattern":"**"}],"Assets":[{"Identity":"C:\\Users\\Utilizador\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\css\\style.css","SourceId":"GestaoObras.Web","SourceType":"Discovered","ContentRoot":"C:\\Users\\Utilizador\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\","BasePath":"_content/GestaoObras.Web","RelativePath":"css/style#[.{fingerprint}]?.css","AssetKind":"All","AssetMode":"All","AssetRole":"Primary","AssetMergeBehavior":"","AssetMergeSource":"","RelatedAsset":"","AssetTraitName":"","AssetTraitValue":"","Fingerprint":"l7ta5bgnhj","Integrity":"YaNi5TzD/5chqaEp4bT67BKISJbsL7bYzgCEw3UnHSQ=","CopyToOutputDirectory":"Never","CopyToPublishDirectory":"PreserveNewest","OriginalItemSpec":"wwwroot\\css\\style.css","FileLength":5483,"LastWriteTime":"2025-11-17T12:01:54+00:00"}],"Endpoints":[{"Route":"css/style.css","AssetFile":"C:\\Users\\Utilizador\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\css\\style.css","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"5483"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\"YaNi5TzD/5chqaEp4bT67BKISJbsL7bYzgCEw3UnHSQ=\""},{"Name":"Last-Modified","Value":"Mon, 17 Nov 2025 12:01:54 GMT"},{"Name":"Cache-Control","Value":"no-cache"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-YaNi5TzD/5chqaEp4bT67BKISJbsL7bYzgCEw3UnHSQ="}]},{"Route":"css/style.l7ta5bgnhj.css","AssetFile":"C:\\Users\\Utilizador\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\css\\style.css","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"5483"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\"YaNi5TzD/5chqaEp4bT67BKISJbsL7bYzgCEw3UnHSQ=\""},{"Name":"Last-Modified","Value":"Mon, 17 Nov 2025 12:01:54 GMT"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"}],"EndpointProperties":[{"Name":"fingerprint","Value":"l7ta5bgnhj"},{"Name":"label","Value":"css/style.css"},{"Name":"integrity","Value":"sha256-YaNi5TzD/5chqaEp4bT67BKISJbsL7bYzgCEw3UnHSQ="}]}]}
+{
+  "Version": 1,
+  "Hash": "NjT6gcSbDlmkow/i6TwuPBt8WDIkVUI8R0G+GLpkc7M=",
+  "Source": "GestaoObras.Web",
+  "BasePath": "_content/GestaoObras.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "GestaoObras.Web\\wwwroot",
+      "Source": "GestaoObras.Web",
+      "ContentRoot": "C:\\Users\\joao-\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\",
+      "BasePath": "_content/GestaoObras.Web",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\joao-\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\css\\style.css",
+      "SourceId": "GestaoObras.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao-\\Documents\\GitHub\\GestaoObras\\GestaoObras.Web\\wwwroot\\",
+      "BasePath": "_content/GestaoObras.Web",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    }
+  ]
+}

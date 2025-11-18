@@ -9,117 +9,115 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestaoObras.Web
 build_property.RootNamespace = GestaoObras.Web
-build_property.ProjectDir = C:\Users\Utilizador\Documents\GitHub\GestaoObras\GestaoObras.Web\
+build_property.ProjectDir = C:\Users\joao-\Documents\GitHub\GestaoObras\GestaoObras.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Utilizador\Documents\GitHub\GestaoObras\GestaoObras.Web
+build_property.MSBuildProjectDirectory = C:\Users\joao-\Documents\GitHub\GestaoObras\GestaoObras.Web
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Create.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Delete.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Edit.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Index.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Clientes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Home/Index.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Create.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Delete.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Details.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Edit.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/index.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/RegistarMaoObra.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/RegistarMaoObra.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXFJlZ2lzdGFyTWFvT2JyYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/RegistarPagamento.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/RegistarMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXFJlZ2lzdGFyTWF0ZXJpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/RegistarPagamento.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXFJlZ2lzdGFyUGFnYW1lbnRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Movimentos/Index.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Movimentos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aW1lbnRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Movimentos/Listagem.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Movimentos/Listagem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aW1lbnRvc1xMaXN0YWdlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Create.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/CRUD.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcQ1JVRC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Delete.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Details.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Edit.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Index.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/RegistarMaterial.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/RegistarMaterial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcUmVnaXN0YXJNYXRlcmlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/_ObraForm.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/_ObraForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcX09icmFGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Shared/_Layout.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/_ViewImports.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/_ViewStart.cshtml]
+[C:/Users/joao-/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

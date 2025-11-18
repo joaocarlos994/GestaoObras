@@ -1,0 +1,47 @@
+@model GestaoObras.Web.Models.MovimentoStock
+
+@{
+    ViewData["Title"] = "Registar Material";
+}
+
+<h2 class="mb-3">Registar Material na Obra @ViewBag.ObraNome</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="RegistarMaterial" method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+            <input type="hidden" asp-for="ObraId" />
+
+            <div class="mb-3">
+                <label asp-for="MaterialId" class="form-label"></label>
+                <select asp-for="MaterialId" asp-items="ViewBag.MaterialId" class="form-select"></select>
+                <span asp-validation-for="MaterialId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Operacao" class="form-label"></label>
+                <select asp-for="Operacao" class="form-select">
+                    <option value="REMOVE">REMOVE</option>
+                    <option value="ADD">ADD</option>
+                </select>
+                <span asp-validation-for="Operacao" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Quantidade" class="form-label"></label>
+                <input asp-for="Quantidade" class="form-control" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Details" asp-route-id="@Model.ObraId" class="btn btn-outline-secondary">Voltar</a>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

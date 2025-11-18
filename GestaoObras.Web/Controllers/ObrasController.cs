@@ -62,7 +62,7 @@ namespace GestaoObras.Web.Controllers
             {
                 ObraId = obra.Id,
                 Operacao = "REMOVE",
-                DataOperacao = DateTime.Now
+                DataOperacao = DateTime.UtcNow
             };
 
             ViewBag.ObraNome = obra.Nome;
@@ -107,7 +107,7 @@ namespace GestaoObras.Web.Controllers
                 material.StockDisponivel -= movimento.Quantidade;
             }
 
-            movimento.DataOperacao = DateTime.Now;
+            movimento.DataOperacao = DateTime.UtcNow;
 
             _context.MovimentosStock.Add(movimento);
             await _context.SaveChangesAsync();
@@ -127,7 +127,7 @@ namespace GestaoObras.Web.Controllers
             var registo = new RegistoMaoObra
             {
                 ObraId = obra.Id,
-                DataRegisto = DateTime.Now
+                DataRegisto = DateTime.UtcNow
             };
 
             ViewBag.ObraNome = obra.Nome;
@@ -148,7 +148,8 @@ namespace GestaoObras.Web.Controllers
                 return View(registo);
             }
 
-            registo.DataRegisto = DateTime.Now;
+            registo.DataRegisto = DateTime.UtcNow;
+
 
             _context.RegistosMaoObra.Add(registo);
             await _context.SaveChangesAsync();
@@ -189,7 +190,7 @@ namespace GestaoObras.Web.Controllers
                 return View(pagamento);
             }
 
-            pagamento.DataRegisto = DateTime.Now;
+            pagamento.DataRegisto = DateTime.UtcNow;
 
             _context.Pagamentos.Add(pagamento);
             await _context.SaveChangesAsync();

@@ -25,6 +25,6 @@ namespace GestaoObras.Web.Models
 
         [Display(Name = "Data da Operação")]
         [Column("DataHora")] // 👈 mapeia para a coluna DataHora da BD
-        public DateTime DataOperacao { get; set; } = DateTime.Now;
+        public DateTime DataOperacao { get; set; } = DateTime.UtcNow;
     }
 }

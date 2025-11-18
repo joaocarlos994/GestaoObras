@@ -6,6 +6,11 @@
 
 <h2>@Model.Nome</h2>
 
+<p class="text-muted">
+    Cliente: <strong>@Model.Cliente?.Nome</strong><br />
+    Estado: <strong>@((Model.Ativa) ? "Ativa" : "Inativa")</strong>
+</p>
+
 <ul class="nav nav-tabs mt-3" id="obraTabs" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#dados" type="button" role="tab">
@@ -97,6 +102,10 @@
 
         @if (Model.RegistosMaoObra != null && Model.RegistosMaoObra.Any())
         {
+            var totalHoras = Model.RegistosMaoObra.Sum(r => r.HorasTrabalhadas);
+
+            <p><strong>Total de horas trabalhadas:</strong> @totalHoras</p>
+
             <table class="table table-sm table-striped">
                 <thead>
                     <tr>
@@ -131,6 +140,10 @@
 
         @if (Model.Pagamentos != null && Model.Pagamentos.Any())
         {
+            var total = Model.Pagamentos.Sum(p => p.Valor);
+
+            <p><strong>Total pago:</strong> @total</p>
+
             <table class="table table-sm table-striped">
                 <thead>
                     <tr>
@@ -165,3 +178,7 @@
         <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Apagar</a>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

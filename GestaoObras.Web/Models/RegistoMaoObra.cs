@@ -21,6 +21,6 @@ namespace GestaoObras.Web.Models
         public decimal HorasTrabalhadas { get; set; }
 
         [Display(Name = "Data/Hora")]
-        public DateTime DataRegisto { get; set; } = DateTime.Now;
+        public DateTime DataRegisto { get; set; } = DateTime.UtcNow;
     }
 }
