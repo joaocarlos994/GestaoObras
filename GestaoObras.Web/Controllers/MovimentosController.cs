@@ -20,7 +20,7 @@ namespace GestaoObras.Web.Controllers
         {
             var movimentos = await _context.MovimentosStock
                 .Include(m => m.Obra)
-                .ThenInclude(o => o.Cliente)
+                    .ThenInclude(o => o.Cliente)
                 .Include(m => m.Material)
                 .OrderByDescending(m => m.DataOperacao)
                 .ToListAsync();

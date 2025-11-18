@@ -4,19 +4,37 @@
     ViewData["Title"] = "Detalhes da Obra";
 }
 
-<h2 class="mb-3">Detalhes da Obra</h2>
+<h2>@Model.Nome</h2>
 
-<div class="card shadow-sm mb-3">
-    <div class="card-body">
-        <dl class="row mb-0">
-            <dt class="col-sm-3">Nome</dt>
-            <dd class="col-sm-9">@Model.Nome</dd>
+<ul class="nav nav-tabs mt-3" id="obraTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#dados" type="button" role="tab">
+            Dados Gerais
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#material" type="button" role="tab">
+            Material
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#maoobra" type="button" role="tab">
+            Mão de Obra
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pagamentos" type="button" role="tab">
+            Pagamentos
+        </button>
+    </li>
+</ul>
 
+<div class="tab-content mt-3">
+    <!-- TAB 1: Dados Gerais -->
+    <div class="tab-pane fade show active" id="dados" role="tabpanel">
+        <dl class="row">
             <dt class="col-sm-3">Cliente</dt>
             <dd class="col-sm-9">@Model.Cliente?.Nome</dd>
-
-            <dt class="col-sm-3">Descrição</dt>
-            <dd class="col-sm-9">@Model.Descricao</dd>
 
             <dt class="col-sm-3">Morada</dt>
             <dd class="col-sm-9">@Model.Morada</dd>
@@ -28,12 +46,119 @@
             <dd class="col-sm-9">@Model.Longitude</dd>
 
             <dt class="col-sm-3">Ativa</dt>
-            <dd class="col-sm-9">@(Model.Ativa ? "Sim" : "Não")</dd>
+            <dd class="col-sm-9">@((Model.Ativa) ? "Sim" : "Não")</dd>
+
+            <dt class="col-sm-3">Descrição</dt>
+            <dd class="col-sm-9">@Model.Descricao</dd>
         </dl>
+    </div>
+
+    <!-- TAB 2: Material -->
+    <div class="tab-pane fade" id="material" role="tabpanel">
+        <a asp-action="RegistarMaterial" asp-route-id="@Model.Id" class="btn btn-success mb-2">
+            Registar Material
+        </a>
+
+        @if (Model.MovimentosStock != null && Model.MovimentosStock.Any())
+        {
+            <table class="table table-sm table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Operação</th>
+                        <th>Quantidade</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var mov in Model.MovimentosStock.OrderByDescending(m => m.DataOperacao))
+                {
+                    <tr>
+                        <td>@mov.Material?.Nome</td>
+                        <td>@mov.Operacao</td>
+                        <td>@mov.Quantidade</td>
+                        <td>@mov.DataOperacao.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Ainda não existem movimentos de material.</p>
+        }
+    </div>
+
+    <!-- TAB 3: Mão de Obra -->
+    <div class="tab-pane fade" id="maoobra" role="tabpanel">
+        <a asp-action="RegistarMaoObra" asp-route-id="@Model.Id" class="btn btn-success mb-2">
+            Registar Mão de Obra
+        </a>
+
+        @if (Model.RegistosMaoObra != null && Model.RegistosMaoObra.Any())
+        {
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Horas</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var r in Model.RegistosMaoObra.OrderByDescending(r => r.DataRegisto))
+                {
+                    <tr>
+                        <td>@r.NomePessoa</td>
+                        <td>@r.HorasTrabalhadas</td>
+                        <td>@r.DataRegisto.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Ainda não existem registos de mão de obra.</p>
+        }
+    </div>
+
+    <!-- TAB 4: Pagamentos -->
+    <div class="tab-pane fade" id="pagamentos" role="tabpanel">
+        <a asp-action="RegistarPagamento" asp-route-id="@Model.Id" class="btn btn-success mb-2">
+            Registar Pagamento
+        </a>
+
+        @if (Model.Pagamentos != null && Model.Pagamentos.Any())
+        {
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var p in Model.Pagamentos.OrderByDescending(p => p.DataRegisto))
+                {
+                    <tr>
+                        <td>@p.NomePessoa</td>
+                        <td>@p.Valor</td>
+                        <td>@p.DataRegisto.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Ainda não existem pagamentos registados.</p>
+        }
     </div>
 </div>
 
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between mt-3">
     <a asp-action="Index" class="btn btn-outline-secondary">Voltar à lista</a>
     <div>
         <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-2">Editar</a>

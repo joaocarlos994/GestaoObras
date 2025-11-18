@@ -60,6 +60,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/RegistarMaoObra.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXFJlZ2lzdGFyTWFvT2JyYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/RegistarPagamento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXFJlZ2lzdGFyUGFnYW1lbnRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Movimentos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aW1lbnRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/RegistarMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNcUmVnaXN0YXJNYXRlcmlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Obras/_ObraForm.cshtml]

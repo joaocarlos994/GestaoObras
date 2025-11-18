@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using GestaoObras.Web.Data;
@@ -36,6 +37,7 @@ namespace GestaoObras.Web.Controllers
             var obra = await _context.Obras
                 .Include(o => o.Cliente)
                 .Include(o => o.MovimentosStock)
+                    .ThenInclude(m => m.Material)
                 .Include(o => o.RegistosMaoObra)
                 .Include(o => o.Pagamentos)
                 .FirstOrDefaultAsync(o => o.Id == id);
@@ -43,6 +45,156 @@ namespace GestaoObras.Web.Controllers
             if (obra == null) return NotFound();
 
             return View(obra);
+        }
+
+        // GET: Obras/RegistarMaterial/5
+        public async Task<IActionResult> RegistarMaterial(int id)
+        {
+            var obra = await _context.Obras
+                .Include(o => o.Cliente)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (obra == null) return NotFound();
+
+            PopularMateriaisDropDown();
+
+            var movimento = new MovimentoStock
+            {
+                ObraId = obra.Id,
+                Operacao = "REMOVE",
+                DataOperacao = DateTime.Now
+            };
+
+            ViewBag.ObraNome = obra.Nome;
+            ViewBag.ClienteNome = obra.Cliente?.Nome;
+
+            return View(movimento);
+        }
+
+        // POST: Obras/RegistarMaterial
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RegistarMaterial(MovimentoStock movimento)
+        {
+            ModelState.Remove("Obra");
+            ModelState.Remove("Material");
+
+            if (!ModelState.IsValid)
+            {
+                PopularMateriaisDropDown(movimento.MaterialId);
+                return View(movimento);
+            }
+
+            var obra = await _context.Obras.FindAsync(movimento.ObraId);
+            if (obra == null) return NotFound();
+
+            var material = await _context.Materiais.FindAsync(movimento.MaterialId);
+            if (material == null) return NotFound();
+
+            if (movimento.Operacao == "ADD")
+            {
+                material.StockDisponivel += movimento.Quantidade;
+            }
+            else if (movimento.Operacao == "REMOVE")
+            {
+                if (material.StockDisponivel < movimento.Quantidade)
+                {
+                    ModelState.AddModelError("Quantidade", "Stock insuficiente para remover essa quantidade.");
+                    PopularMateriaisDropDown(movimento.MaterialId);
+                    return View(movimento);
+                }
+
+                material.StockDisponivel -= movimento.Quantidade;
+            }
+
+            movimento.DataOperacao = DateTime.Now;
+
+            _context.MovimentosStock.Add(movimento);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Details", new { id = movimento.ObraId });
+        }
+
+        // GET: Obras/RegistarMaoObra/5
+        public async Task<IActionResult> RegistarMaoObra(int id)
+        {
+            var obra = await _context.Obras
+                .Include(o => o.Cliente)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (obra == null) return NotFound();
+
+            var registo = new RegistoMaoObra
+            {
+                ObraId = obra.Id,
+                DataRegisto = DateTime.Now
+            };
+
+            ViewBag.ObraNome = obra.Nome;
+            ViewBag.ClienteNome = obra.Cliente?.Nome;
+
+            return View(registo);
+        }
+
+        // POST: Obras/RegistarMaoObra
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RegistarMaoObra(RegistoMaoObra registo)
+        {
+            ModelState.Remove("Obra");
+
+            if (!ModelState.IsValid)
+            {
+                return View(registo);
+            }
+
+            registo.DataRegisto = DateTime.Now;
+
+            _context.RegistosMaoObra.Add(registo);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Details", new { id = registo.ObraId });
+        }
+
+        // GET: Obras/RegistarPagamento/5
+        public async Task<IActionResult> RegistarPagamento(int id)
+        {
+            var obra = await _context.Obras
+                .Include(o => o.Cliente)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (obra == null) return NotFound();
+
+            var pagamento = new Pagamento
+            {
+                ObraId = obra.Id,
+                DataRegisto = DateTime.Now
+            };
+
+            ViewBag.ObraNome = obra.Nome;
+            ViewBag.ClienteNome = obra.Cliente?.Nome;
+
+            return View(pagamento);
+        }
+
+        // POST: Obras/RegistarPagamento
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RegistarPagamento(Pagamento pagamento)
+        {
+            ModelState.Remove("Obra");
+
+            if (!ModelState.IsValid)
+            {
+                return View(pagamento);
+            }
+
+            pagamento.DataRegisto = DateTime.Now;
+
+            _context.Pagamentos.Add(pagamento);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Details", new { id = pagamento.ObraId });
         }
 
         // GET: Obras/Create
@@ -57,7 +209,6 @@ namespace GestaoObras.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Obra obra)
         {
-            // A navegação Cliente não é preenchida pelo formulário
             ModelState.Remove("Cliente");
 
             if (ModelState.IsValid)
@@ -90,7 +241,6 @@ namespace GestaoObras.Web.Controllers
         {
             if (id != obra.Id) return NotFound();
 
-            // Ignorar navegação Cliente na validação
             ModelState.Remove("Cliente");
 
             if (ModelState.IsValid)
@@ -150,6 +300,17 @@ namespace GestaoObras.Web.Controllers
                 .ToList();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nome", clienteIdSelecionado);
+        }
+
+        private void PopularMateriaisDropDown(int? materialIdSelecionado = null)
+        {
+            var materiais = _context.Materiais
+                .OrderBy(m => m.Nome)
+                .ToList();
+
+            ViewBag.MaterialId = new SelectList(
+                materiais, "Id", "Nome", materialIdSelecionado
+            );
         }
 
         private bool ObraExists(int id)
