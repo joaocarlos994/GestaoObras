@@ -24,7 +24,6 @@ namespace GestaoObras.Web.Controllers
                     .ThenInclude(o => o.Cliente)
                 .Include(m => m.Material)
               .OrderByDescending(m => m.Id)
-
                 .ToListAsync();
 
             return View(movimentos);

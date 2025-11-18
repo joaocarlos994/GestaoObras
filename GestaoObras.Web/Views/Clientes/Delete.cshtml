@@ -1,0 +1,47 @@
+@model GestaoObras.Web.Models.Cliente
+
+@{
+    ViewData["Title"] = "Apagar Cliente";
+}
+
+<h2 class="mb-3">Apagar Cliente</h2>
+
+<div class="alert alert-warning">
+    <strong>Tens a certeza que queres apagar este cliente?</strong><br />
+    Esta ação não pode ser desfeita.
+</div>
+
+<div class="card shadow-sm mb-3">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Nome</dt>
+            <dd class="col-sm-9">@Model.Nome</dd>
+
+            <dt class="col-sm-3">NIF</dt>
+            <dd class="col-sm-9">@Model.NIF</dd>
+
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">Telefone</dt>
+            <dd class="col-sm-9">@Model.Telefone</dd>
+
+            <dt class="col-sm-3">Morada</dt>
+            <dd class="col-sm-9">@Model.Morada</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete" method="post">
+    @* Hidden para enviar o Id no POST *@
+    <input type="hidden" asp-for="Id" />
+
+    <div class="d-flex justify-content-between">
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            Cancelar
+        </a>
+        <button type="submit" class="btn btn-danger">
+            Apagar
+        </button>
+    </div>
+</form>

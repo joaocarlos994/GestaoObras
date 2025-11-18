@@ -1,3 +1,5 @@
+@model IEnumerable<GestaoObras.Web.Models.Cliente>
+
 @{
     ViewData["Title"] = "Clientes";
 }
@@ -15,7 +17,7 @@
 <div class="card shadow-sm">
     <div class="card-body">
         <p class="text-muted mb-3">
-            Aqui vais listar os clientes (mais tarde, quando ligares ao Entity Framework).
+            Lista de clientes registados na aplicação.
         </p>
 
         <table class="table table-hover align-middle">
@@ -28,20 +30,33 @@
                     <th class="text-end">Ações</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Exemplo estático, depois substituímos por um foreach -->
-                <tr>
-                    <td>Exemplo Cliente</td>
-                    <td>123456789</td>
-                    <td>cliente@exemplo.pt</td>
-                    <td>912 345 678</td>
-                    <td class="text-end">
-                        <a href="#" class="btn btn-sm btn-outline-secondary">Detalhes</a>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
-                        <a href="#" class="btn btn-sm btn-outline-danger">Apagar</a>
-                    </td>
-                </tr>
-            </tbody>
+       <tbody>
+    @if (Model == null || !Model.Any())
+    {
+        <tr>
+            <td colspan="5" class="text-center text-muted">
+                Ainda não existem clientes registados.
+            </td>
+        </tr>
+    }
+    else
+    {
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Nome</td>
+                <td>@cliente.NIF</td>
+                <td>@cliente.Email</td>
+                <td>@cliente.Telefone</td>
+                <td class="text-end">
+                    <a asp-action="Details" asp-route-id="@cliente.Id" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                    <a asp-action="Edit" asp-route-id="@cliente.Id" class="btn btn-sm btn-outline-primary">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@cliente.Id" class="btn btn-sm btn-outline-danger">Apagar</a>
+                </td>
+            </tr>
+        }
+    }
+</tbody>
         </table>
     </div>
 </div>
