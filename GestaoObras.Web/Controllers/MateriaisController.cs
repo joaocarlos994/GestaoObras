@@ -1,5 +1,4 @@
-// MateriaisController.cs
-// Controller logic for managing Materiaisusing System.Linq;
+using System.Linq;
 using System.Threading.Tasks;
 using GestaoObras.Web.Data;
 using GestaoObras.Web.Models;
@@ -51,12 +50,14 @@ namespace GestaoObras.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Material material)
         {
-            if (!ModelState.IsValid)
-                return View(material);
+            if (ModelState.IsValid)
+            {
+                _context.Add(material);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
 
-            _context.Add(material);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return View(material);
         }
 
         // GET: Materiais/Edit/5
@@ -77,23 +78,25 @@ namespace GestaoObras.Web.Controllers
         {
             if (id != material.Id) return NotFound();
 
-            if (!ModelState.IsValid)
-                return View(material);
-
-            try
+            if (ModelState.IsValid)
             {
-                _context.Update(material);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MaterialExists(material.Id))
-                    return NotFound();
-                else
-                    throw;
+                try
+                {
+                    _context.Update(material);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!_context.Materiais.Any(m => m.Id == material.Id))
+                        return NotFound();
+                    else
+                        throw;
+                }
+
+                return RedirectToAction(nameof(Index));
             }
 
-            return RedirectToAction(nameof(Index));
+            return View(material);
         }
 
         // GET: Materiais/Delete/5
@@ -121,11 +124,6 @@ namespace GestaoObras.Web.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool MaterialExists(int id)
-        {
-            return _context.Materiais.Any(e => e.Id == id);
         }
     }
 }

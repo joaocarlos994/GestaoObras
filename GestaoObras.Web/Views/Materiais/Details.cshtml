@@ -1,0 +1,30 @@
+@model GestaoObras.Web.Models.Material
+
+@{
+    ViewData["Title"] = "Detalhes do Material";
+}
+
+<h2 class="mb-3">Detalhes do Material</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Nome</dt>
+            <dd class="col-sm-9">@Model.Nome</dd>
+
+            <dt class="col-sm-3">Descrição</dt>
+            <dd class="col-sm-9">@Model.Descricao</dd>
+
+            <dt class="col-sm-3">Stock Disponível</dt>
+            <dd class="col-sm-9">@Model.StockDisponivel</dd>
+        </dl>
+
+        <div class="d-flex justify-content-between mt-3">
+            <a asp-action="Index" class="btn btn-outline-secondary">Voltar à lista</a>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Apagar</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,37 +1,44 @@
+@model IEnumerable<GestaoObras.Web.Models.MovimentoStock>
+
 @{
     ViewData["Title"] = "Movimentos de Stock";
 }
 
 <h2 class="mb-3">Movimentos de Stock</h2>
-<p class="text-muted">
-    Listagem apenas de leitura com os movimentos de materiais por obra.
-</p>
 
 <div class="card shadow-sm">
     <div class="card-body">
-
-        <table class="table table-hover align-middle">
-            <thead class="table-light">
-                <tr>
-                    <th>Obra</th>
-                    <th>Cliente</th>
-                    <th>Material</th>
-                    <th>Operação</th>
-                    <th>Quantidade</th>
-                    <th>Data da Operação</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Obra Exemplo</td>
-                    <td>Cliente Exemplo</td>
-                    <td>Tijolo Exemplo</td>
-                    <td><span class="badge bg-danger">REMOVE</span></td>
-                    <td>10</td>
-                    <td>2025-01-10 14:35</td>
-                </tr>
-            </tbody>
-        </table>
-
+        @if (Model == null || !Model.Any())
+        {
+            <p class="text-muted mb-0">Ainda não existem movimentos de stock registados.</p>
+        }
+        else
+        {
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Obra</th>
+                        <th>Cliente</th>
+                        <th>Material</th>
+                        <th>Operação</th>
+                        <th>Quantidade</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td>@m.Obra?.Nome</td>
+                        <td>@m.Obra?.Cliente?.Nome</td>
+                        <td>@m.Material?.Nome</td>
+                        <td>@m.Operacao</td>
+                        <td>@m.Quantidade</td>
+                        <td>@m.DataOperacao.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
     </div>
 </div>

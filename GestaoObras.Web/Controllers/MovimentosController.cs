@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using GestaoObras.Web.Data;
-using GestaoObras.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,9 +20,9 @@ namespace GestaoObras.Web.Controllers
         {
             var movimentos = await _context.MovimentosStock
                 .Include(m => m.Obra)
-                    .ThenInclude(o => o.Cliente)
+                .ThenInclude(o => o.Cliente)
                 .Include(m => m.Material)
-              .OrderByDescending(m => m.Id)
+                .OrderByDescending(m => m.DataOperacao)
                 .ToListAsync();
 
             return View(movimentos);

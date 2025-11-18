@@ -9,18 +9,60 @@
 <div class="card shadow-sm">
     <div class="card-body">
         <form asp-action="Edit" method="post">
-            <input type="hidden" asp-for="Id" />
-
             <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-            @Html.Partial("_ObraForm", Model)
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="Nome" class="form-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="ClienteId" class="form-label"></label>
+                    <select asp-for="ClienteId" class="form-select"
+                            asp-items="ViewBag.ClienteId"></select>
+                    <span asp-validation-for="ClienteId" class="text-danger"></span>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="Descricao" class="form-label"></label>
+                    <textarea asp-for="Descricao" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="Morada" class="form-label"></label>
+                    <input asp-for="Morada" class="form-control" />
+                    <span asp-validation-for="Morada" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Latitude" class="form-label"></label>
+                    <input asp-for="Latitude" class="form-control" />
+                    <span asp-validation-for="Latitude" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Longitude" class="form-label"></label>
+                    <input asp-for="Longitude" class="form-control" />
+                    <span asp-validation-for="Longitude" class="text-danger"></span>
+                </div>
+
+                <div class="col-12 form-check mt-2">
+                    <input asp-for="Ativa" class="form-check-input" />
+                    <label asp-for="Ativa" class="form-check-label"></label>
+                </div>
+            </div>
 
             <div class="mt-4 d-flex justify-content-between">
                 <a asp-action="Index" class="btn btn-outline-secondary">
                     Voltar à lista
                 </a>
                 <button type="submit" class="btn btn-primary">
-                    <i class="bi bi-check-lg me-1"></i> Guardar alterações
+                    Guardar alterações
                 </button>
             </div>
         </form>

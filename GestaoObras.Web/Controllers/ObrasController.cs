@@ -42,7 +42,6 @@ namespace GestaoObras.Web.Controllers
 
             if (obra == null) return NotFound();
 
-            // mais tarde podes passar um ViewModel com tabs
             return View(obra);
         }
 
@@ -58,15 +57,18 @@ namespace GestaoObras.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Obra obra)
         {
-            if (!ModelState.IsValid)
+            // A navegação Cliente não é preenchida pelo formulário
+            ModelState.Remove("Cliente");
+
+            if (ModelState.IsValid)
             {
-                PopularClientesDropDown(obra.ClienteId);
-                return View(obra);
+                _context.Add(obra);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
 
-            _context.Add(obra);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            PopularClientesDropDown(obra.ClienteId);
+            return View(obra);
         }
 
         // GET: Obras/Edit/5
@@ -88,26 +90,29 @@ namespace GestaoObras.Web.Controllers
         {
             if (id != obra.Id) return NotFound();
 
-            if (!ModelState.IsValid)
+            // Ignorar navegação Cliente na validação
+            ModelState.Remove("Cliente");
+
+            if (ModelState.IsValid)
             {
-                PopularClientesDropDown(obra.ClienteId);
-                return View(obra);
+                try
+                {
+                    _context.Update(obra);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ObraExists(obra.Id))
+                        return NotFound();
+                    else
+                        throw;
+                }
+
+                return RedirectToAction(nameof(Index));
             }
 
-            try
-            {
-                _context.Update(obra);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ObraExists(obra.Id))
-                    return NotFound();
-                else
-                    throw;
-            }
-
-            return RedirectToAction(nameof(Index));
+            PopularClientesDropDown(obra.ClienteId);
+            return View(obra);
         }
 
         // GET: Obras/Delete/5

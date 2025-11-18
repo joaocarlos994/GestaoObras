@@ -1,17 +1,32 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
 namespace GestaoObras.Web.Models
 {
     public class MovimentoStock
     {
         public int Id { get; set; }
 
+        [Required]
         public int ObraId { get; set; }
-        public Obra Obra { get; set; } = new Obra();
+        public Obra Obra { get; set; }
 
+        [Required]
         public int MaterialId { get; set; }
-        public Material Material { get; set; } = new Material();
+        public Material Material { get; set; }
 
-        public string Operacao { get; set; } = string.Empty;
+        [Required]
+        [Display(Name = "Operação")]
+        public string Operacao { get; set; } = "REMOVE"; // ADD ou REMOVE
+
+        [Required]
         public int Quantidade { get; set; }
-        public DateTime DataHora { get; set; }
+
+        [Display(Name = "Data da Operação")]
+        [Column("DataHora")] 
+        public DateTime DataOperacao { get; set; } = DateTime.Now;
+
     }
 }

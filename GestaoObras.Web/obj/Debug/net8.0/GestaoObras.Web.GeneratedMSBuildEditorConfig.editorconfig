@@ -40,8 +40,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/CRUD.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXENSVUQuY3NodG1s
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWlzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Utilizador/Documents/GitHub/GestaoObras/GestaoObras.Web/Views/Materiais/index.cshtml]

@@ -8,11 +8,14 @@ namespace GestaoObras.Web.Models
         public string Descricao { get; set; } = string.Empty;
 
         public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; }   // <--- removido o new Cliente()
+        public Cliente? Cliente { get; set; }
 
         public string Morada { get; set; } = string.Empty;
-        public double? Latitude { get; set; }
-        public double? Longitude { get; set; }
+
+        // Latitude/Longitude obrigatórios (batem certo com a BD)
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+
         public bool Ativa { get; set; }
 
         public ICollection<MovimentoStock> MovimentosStock { get; set; } = new List<MovimentoStock>();
