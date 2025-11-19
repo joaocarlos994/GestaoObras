@@ -3,6 +3,7 @@
 }
 
 <div class="row mb-4">
+    <!-- Hero + botões principais -->
     <div class="col-lg-8">
         <div class="p-4 rounded-3 bg-white shadow-sm">
             <h1 class="h3 mb-2">Olá, bem-vindo à Gestão de Obras</h1>
@@ -24,89 +25,175 @@
         </div>
     </div>
 
+    <!-- Resumo rápido com valores reais -->
     <div class="col-lg-4 mt-3 mt-lg-0">
         <div class="p-4 rounded-3 bg-dark text-white shadow-sm h-100 d-flex flex-column justify-content-center">
-            <h2 class="h5 mb-2"><i class="bi bi-clipboard-data me-2"></i>Resumo rápido</h2>
-            <p class="mb-1 small text-light">Nº de obras ativas, clientes, materiais, etc.</p>
-            <p class="mb-0 small text-secondary">Mais tarde podes substituir por dados reais do EF.</p>
+            <h2 class="h5 mb-3">
+                <i class="bi bi-clipboard-data me-2"></i>Resumo rápido
+            </h2>
+
+            <ul class="list-unstyled small mb-0">
+                <li><strong>@ViewBag.ObrasAtivas</strong> obras ativas</li>
+                <li><strong>@ViewBag.ObrasTotais</strong> obras no total</li>
+                <li><strong>@ViewBag.Clientes</strong> clientes registados</li>
+                <li><strong>@ViewBag.Materiais</strong> materiais em catálogo</li>
+                <li><strong>@ViewBag.Movimentos</strong> movimentos de stock</li>
+            </ul>
         </div>
     </div>
 </div>
 
+<!-- Cards de KPIs / atalhos -->
 <div class="row g-3">
     <div class="col-md-6 col-xl-3">
-        <div class="card shadow-sm border-0 h-100 dashboard-card">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="icon-circle bg-primary-subtle text-primary me-3">
-                        <i class="bi bi-people fs-5"></i>
-                    </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="card-title mb-0">Obras Ativas</h5>
+                    <span class="badge bg-primary-subtle text-primary">
+                        <i class="bi bi-lightning-charge"></i>
+                    </span>
+                </div>
+                <p class="display-6 fw-bold mb-2">@ViewBag.ObrasAtivas</p>
+                <p class="text-muted small mb-3">Obras atualmente em andamento.</p>
+                <a asp-controller="Obras" asp-action="Index" class="small fw-semibold">
+                    Ver todas as obras →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
                     <h5 class="card-title mb-0">Clientes</h5>
+                    <span class="badge bg-success-subtle text-success">
+                        <i class="bi bi-people"></i>
+                    </span>
                 </div>
-                <p class="card-text text-muted">
-                    Gerir clientes registados: dados de contacto, NIF e histórico de obras.
-                </p>
-                <a asp-controller="Clientes" asp-action="Index" class="stretched-link small fw-semibold">
-                    Ir para Clientes →
+                <p class="display-6 fw-bold mb-2">@ViewBag.Clientes</p>
+                <p class="text-muted small mb-3">Clientes registados no sistema.</p>
+                <a asp-controller="Clientes" asp-action="Index" class="small fw-semibold">
+                    Gerir clientes →
                 </a>
             </div>
         </div>
     </div>
 
     <div class="col-md-6 col-xl-3">
-        <div class="card shadow-sm border-0 h-100 dashboard-card">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="icon-circle bg-success-subtle text-success me-3">
-                        <i class="bi bi-bank fs-5"></i>
-                    </div>
-                    <h5 class="card-title mb-0">Obras</h5>
-                </div>
-                <p class="card-text text-muted">
-                    Criar e acompanhar obras, incluindo localização, estado e cliente associado.
-                </p>
-                <a asp-controller="Obras" asp-action="Index" class="stretched-link small fw-semibold">
-                    Ir para Obras →
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6 col-xl-3">
-        <div class="card shadow-sm border-0 h-100 dashboard-card">
-            <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="icon-circle bg-warning-subtle text-warning me-3">
-                        <i class="bi bi-box-seam fs-5"></i>
-                    </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
                     <h5 class="card-title mb-0">Materiais</h5>
+                    <span class="badge bg-warning-subtle text-warning">
+                        <i class="bi bi-box-seam"></i>
+                    </span>
                 </div>
-                <p class="card-text text-muted">
-                    Catalogar materiais, gerir stock e associar consumos às obras.
-                </p>
-                <a asp-controller="Materiais" asp-action="Index" class="stretched-link small fw-semibold">
-                    Ir para Materiais →
+                <p class="display-6 fw-bold mb-2">@ViewBag.Materiais</p>
+                <p class="text-muted small mb-3">Itens disponíveis para consumo em obras.</p>
+                <a asp-controller="Materiais" asp-action="Index" class="small fw-semibold">
+                    Ver materiais →
                 </a>
             </div>
         </div>
     </div>
 
     <div class="col-md-6 col-xl-3">
-        <div class="card shadow-sm border-0 h-100 dashboard-card">
+        <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="icon-circle bg-info-subtle text-info me-3">
-                        <i class="bi bi-arrow-left-right fs-5"></i>
-                    </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
                     <h5 class="card-title mb-0">Movimentos</h5>
+                    <span class="badge bg-info-subtle text-info">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </span>
                 </div>
-                <p class="card-text text-muted">
-                    Consultar movimentos de stock por obra, material, quantidade e data.
-                </p>
-                <a asp-controller="Movimentos" asp-action="Index" class="stretched-link small fw-semibold">
-                    Ver Movimentos →
+                <p class="display-6 fw-bold mb-2">@ViewBag.Movimentos</p>
+                <p class="text-muted small mb-3">Entradas e saídas de materiais.</p>
+                <a asp-controller="Movimentos" asp-action="Index" class="small fw-semibold">
+                    Ver movimentos →
                 </a>
             </div>
         </div>
     </div>
+    <div class="row mt-4 g-3">
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0">
+         <div class="table-title">Últimas obras</div>
+
+            <div class="card-body p-0">
+                @if (ViewBag.UltimasObras != null && ViewBag.UltimasObras.Count > 0)
+                {
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Obra</th>
+                                <th>Cliente</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var o in ViewBag.UltimasObras)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-controller="Obras" asp-action="Details" asp-route-id="@o.Id">
+                                        @o.Nome
+                                    </a>
+                                </td>
+                                <td>@o.Cliente?.Nome</td>
+                                <td>@(o.Ativa ? "Ativa" : "Inativa")</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p class="text-muted p-3 mb-0">Ainda não existem obras.</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card shadow-sm border-0">
+           <div class="table-title">Últimos movimentos de stock</div>
+
+            <div class="card-body p-0">
+                @if (ViewBag.UltimosMovimentos != null && ViewBag.UltimosMovimentos.Count > 0)
+                {
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Qtd</th>
+                                <th>Obra</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var m in ViewBag.UltimosMovimentos)
+                        {
+                            <tr>
+                                <td>@m.Material?.Nome</td>
+                                <td>@m.Quantidade</td>
+                                <td>@m.Obra?.Nome</td>
+                                <td>@m.DataOperacao.ToString("dd/MM")</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p class="text-muted p-3 mb-0">Ainda não existem movimentos.</p>
+                }
+            </div>
+        </div>
+    </div>
+  
+
+</div>
+
 </div>
